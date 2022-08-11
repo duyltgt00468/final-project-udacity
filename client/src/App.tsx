@@ -3,10 +3,10 @@ import { Link, Route, Router, Switch } from 'react-router-dom'
 import { Grid, Menu, Segment } from 'semantic-ui-react'
 
 import Auth from './auth/Auth'
-import { EditTodo } from './components/EditTodo'
+import { EditFeed } from './components/EditFeed'
 import { LogIn } from './components/LogIn'
 import { NotFound } from './components/NotFound'
-import { Todos } from './components/Todos'
+import { Feeds } from './components/Feeds'
 
 export interface AppProps {}
 
@@ -54,10 +54,16 @@ export default class App extends Component<AppProps, AppState> {
   }
 
   generateMenu() {
+    const feed = {
+      color: "white",
+      backgroundColor: "DodgerBlue",
+      padding: "10px",
+      fontFamily: "Sans-Serif"
+    };
     return (
       <Menu>
         <Menu.Item name="home">
-          <Link to="/">Home</Link>
+          <Link style={feed} to="/">Dashboard</Link>
         </Menu.Item>
 
         <Menu.Menu position="right">{this.logInLogOutButton()}</Menu.Menu>
@@ -92,15 +98,15 @@ export default class App extends Component<AppProps, AppState> {
           path="/"
           exact
           render={props => {
-            return <Todos {...props} auth={this.props.auth} />
+            return <Feeds {...props} auth={this.props.auth} />
           }}
         />
 
         <Route
-          path="/todos/:todoId/edit"
+          path="/feeds/:feedId/edit"
           exact
           render={props => {
-            return <EditTodo {...props} auth={this.props.auth} />
+            return <EditFeed {...props} auth={this.props.auth} />
           }}
         />
 

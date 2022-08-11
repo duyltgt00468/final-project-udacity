@@ -14,11 +14,15 @@ export class LogIn extends React.PureComponent<LogInProps, LogInState> {
   }
 
   render() {
-    return (
-      <div>
-        <h1>Please log in</h1>
+    const login = {
+      fontFamily: "Sans-Serif"
+    };
 
-        <Button onClick={this.onLogin} size="huge" color="olive">
+    return (
+      <div style={login}>
+        <h1>Log in to Feed</h1>
+
+        <Button onClick={this.onLogin} size="huge" color="green" >
           Log in
         </Button>
       </div>
