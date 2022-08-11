@@ -1,8 +1,9 @@
-export interface TodoItem {
+export interface FeedItem {
   userId: string
-  todoId: string
+  feedId: string
   createdAt: string
   name: string
+  description: string
   dueDate: string
   done: boolean
   attachmentUrl?: string
