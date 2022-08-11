@@ -1,15 +1,15 @@
 {
 	"info": {
-		"_postman_id": "d0700d24-79ec-487e-8403-b565bef7f8e0",
-		"name": "Udacity C4 Project",
+		"_postman_id": "ffd3ce93-c94d-4fe2-b35f-5120778da923",
+		"name": "Udacity Final Project",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "TODOs",
+			"name": "FEEDs",
 			"item": [
 				{
-					"name": "Get all todos",
+					"name": "Get all feeds",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -19,12 +19,8 @@
 								"type": "text"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
-							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/todos",
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/feeds",
 							"protocol": "https",
 							"host": [
 								"{{apiId}}",
@@ -35,14 +31,14 @@
 							],
 							"path": [
 								"dev",
-								"todos"
+								"feeds"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Create todo",
+					"name": "Create feed",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -81,7 +77,7 @@
 					"response": []
 				},
 				{
-					"name": "Update todo",
+					"name": "Update feed",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -102,7 +98,7 @@
 							"raw": "{\n\t\"name\": \"Change the world\",\n\t\"dueDate\": \"2019-12-11\",\n\t\"done\": true\n}"
 						},
 						"url": {
-							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/todos/35dd600f-43c2-4649-903c-615e1586a26f",
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/feeds/35dd600f-43c2-4649-903c-615e1586a26f",
 							"protocol": "https",
 							"host": [
 								"{{apiId}}",
@@ -113,7 +109,7 @@
 							],
 							"path": [
 								"dev",
-								"todos",
+								"feeds",
 								"35dd600f-43c2-4649-903c-615e1586a26f"
 							]
 						}
@@ -121,7 +117,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete todo",
+					"name": "Delete feed",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -142,7 +138,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/todos/fe671583-4512-45f6-9475-4265c04362fb",
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/feeds/186adfad-d15a-4499-a66e-5414537b6090",
 							"protocol": "https",
 							"host": [
 								"{{apiId}}",
@@ -153,8 +149,8 @@
 							],
 							"path": [
 								"dev",
-								"todos",
-								"fe671583-4512-45f6-9475-4265c04362fb"
+								"feeds",
+								"186adfad-d15a-4499-a66e-5414537b6090"
 							]
 						}
 					},
@@ -176,7 +172,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/todos/3836b777-9bc4-4429-9b79-ba4e4f5f91c0/attachment",
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/feeds/186adfad-d15a-4499-a66e-5414537b6090/attachment",
 							"protocol": "https",
 							"host": [
 								"{{apiId}}",
@@ -187,8 +183,8 @@
 							],
 							"path": [
 								"dev",
-								"todos",
-								"3836b777-9bc4-4429-9b79-ba4e4f5f91c0",
+								"feeds",
+								"186adfad-d15a-4499-a66e-5414537b6090",
 								"attachment"
 							]
 						}
@@ -200,7 +196,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "ce2b42d4-8cc5-4f30-a6ed-e7f0f303c3fd",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -210,7 +205,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "efb16c49-3866-4241-97d1-360ad72736d8",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -224,7 +218,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "2e83c0fe-6650-44d5-a90f-4c27ff720d83",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -234,7 +227,6 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "977c227e-2df3-42eb-9a48-ec25e2f7eeae",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -244,15 +236,13 @@
 	],
 	"variable": [
 		{
-			"id": "bf208e6b-f66d-4008-9366-dd541ff65425",
 			"key": "apiId",
-			"value": "",
+			"value": "86mbddc8z0",
 			"type": "string"
 		},
 		{
-			"id": "9bc6399a-d2bb-4f2d-9ffa-8480370d383c",
 			"key": "authToken",
-			"value": "",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkVFb2hvUFZmQTRJaklOS01pOHJYTiJ9.eyJpc3MiOiJodHRwczovL2Rldi1kdXlsdDYudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYyZjIxYTdjMTUzZGE3MDU1NThjODI0MyIsImF1ZCI6IjRQOE1jNHhWT3AyOExoN2dhdkI0MHdIOUE5QjJDallwIiwiaWF0IjoxNjYwMjMwNzA1LCJleHAiOjE2NjA2NjI3MDUsImF0X2hhc2giOiI4TWZLczc2THhtTzFmMVRIMEhFT29nIiwibm9uY2UiOiJfR3pyZ3RQMXpWelZvVE5oUjJfVlNjbDBNdmZsMWZpdSJ9.crs-dYgb_VCwJZ7kzvGhPtcLUR5Cy8Fd2xoZSYTSjz8-wYaU_GkRP1pfn6CGV46nhPe426AWceZooNWZZXIutMg1jFjMRGdSChP8LADy9sHcgAS4bFrjRlTAXhigcFBhINL09nQ84cIkKz12_mozeZ8kOo2sfkVGDz9u7JERMbzj8mAukkHwxxNSC1Sp99A6rf5GFVSIgf7jlcA8ecChViOdifJtcLBYQauyfIQ5AnHTRXlVpRa9-deuVHPmqRSJvQ2EFF9Sw1qpWk07e08Te23mEanD1_6xgGKgzUXAhnJpCoIaWi6xlOJRn_s_Xkd8it4d045Bwjy-cVDc1pC22g",
 			"type": "string"
 		}
 	]
