@@ -76,22 +76,29 @@ export class FeedsAccess {
     }
 
     async deleteFeed(userId: string, feedId: string) {
-        this.docClient.delete({
+        logger.info('delete feedId', feedId)
+        await this.docClient.delete({
             TableName: this.feedsTable,
             Key: {
-                feedId: feedId,
-                userId: userId
+                feedId,
+                userId
+            },
+            ConditionExpression: 'feedId = :feedId',
+            ExpressionAttributeValues: {
+                ':feedId': feedId
             }
-        })
-         const params = {
+        }).promise()
+
+        const params = {
             Bucket: this.bucketName,
             Key: feedId
         }
+        
         await this.s3.deleteObject(params, function (err, data) {
-            if (err) logger.info('Delete feed failed', err.stack)
+            if (err) logger.info('error while deleting object', err.stack)
             else logger.info(data)
         }).promise()
-    }
+    }   
 }
 
 function createDynamoDBClient(): DocumentClient {
